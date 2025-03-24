@@ -1,5 +1,6 @@
 # TODO
 
+- Return nil if a resource is not found such as instance, storage pool, network, etc.
 - Add create, update and delete for resources
 - Add missing resources
   - [ ] certificates
