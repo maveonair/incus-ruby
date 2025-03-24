@@ -27,7 +27,7 @@ module Incus
     include Server
     include Warnings
 
-    DEFAULT_SOCKET_PATH = "/var/lib/incus/incus.socket"
+    DEFAULT_SOCKET_PATH = "/var/lib/incus/unix.socket"
     DEFAULT_CERT_DIR = File.join(Dir.home, ".config", "incus")
     DEFAULT_CLIENT_CERT = File.join(DEFAULT_CERT_DIR, "client.crt")
     DEFAULT_CLIENT_KEY = File.join(DEFAULT_CERT_DIR, "client.key")
@@ -77,7 +77,7 @@ module Incus
     # @return [String] The response body
     def get_via_unix_socket(path)
       url = extend_url("http://localhost/1.0#{path}")
-      agent = HTTPX.with_unix_socket(DEFAULT_SOCKET_PATH)
+      agent = HTTPX.with(transport: :unix, addresses: [DEFAULT_SOCKET_PATH])
       agent.get(url)
     end
 
