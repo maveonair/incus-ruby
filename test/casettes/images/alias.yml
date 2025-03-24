@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://incus-dev:8443/1.0/images/aliases/alpine-edge?project=default
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - httpx.rb/1.4.2
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"923ccb552a705e07a797c06e2956112db45dd333e1dc3e4f1048cd0a1bd3141c"'
+      Content-Length:
+      - '240'
+      Date:
+      - Mon, 24 Mar 2025 20:49:31 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"sync","status":"Success","status_code":200,"operation":"","error_code":0,"error":"","metadata":{"description":"","target":"9c3d9f0df4d11a3ae106a2862edf459e3981770e74386e1d1246e714e42159a4","name":"alpine-edge","type":"container"}}
+
+        '
+  recorded_at: Mon, 24 Mar 2025 20:49:31 GMT
+recorded_with: VCR 6.3.1

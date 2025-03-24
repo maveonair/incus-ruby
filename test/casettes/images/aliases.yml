@@ -1,0 +1,34 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://incus-dev:8443/1.0/images/aliases?project=default&recursion=1
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - httpx.rb/1.4.2
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "242"
+        Date:
+          - Mon, 24 Mar 2025 20:48:42 GMT
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '{"type":"sync","status":"Success","status_code":200,"operation":"","error_code":0,"error":"","metadata":[{"description":"","target":"9c3d9f0df4d11a3ae106a2862edf459e3981770e74386e1d1246e714e42159a4","name":"alpine-edge","type":"container"}]}
+
+          '
+    recorded_at: Mon, 24 Mar 2025 20:48:42 GMT
+recorded_with: VCR 6.3.1
